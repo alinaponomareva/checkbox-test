@@ -1,0 +1,14 @@
+@mixin container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $width-tablet) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

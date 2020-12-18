@@ -1,0 +1,117 @@
+.checkboxes__wrapper {
+  background-color: $color-accent;
+  height: 50vh;
+  position: relative;
+}
+
+.checkboxes__inner {
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  padding: 30px 15px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.checkboxes__title {
+  font-size: 27px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #474747;
+  font-family: "RobotoMedium", "Arial", sans-serif;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkbox__input-wrapper {
+  margin: auto;
+
+  & + .checkbox__input-wrapper {
+    margin-top: 20px;
+  }
+}
+
+.checkbox__input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 20px;
+}
+
+.checkbox__text {
+	position: relative;
+	cursor: pointer;
+  padding-left: 63px;
+  color: #474747;
+  font-family: "RobotoRegular", "Arial", sans-serif;
+}
+
+.checkbox__text {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    top: 50%;
+    transform: translateY(-60%);
+    left: 0;
+    border-radius: 18%;
+    background-color: #d5d5d5;
+    transition: .3s;
+  }
+}
+
+.checkbox__text {
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 22px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: #d5d5d5;
+    transition: .2s;
+  }
+}
+  
+.checkbox__input {
+  &:checked {
+    & + .checkbox__text {
+      &::before {
+        background-color: $color-accent;
+      }
+
+      &::after {
+        left: 28px;
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  &:disabled {
+    & + .checkbox__text {
+      cursor: default;
+
+      &::before {
+        background-color: #e5e5e5;
+      }
+
+      &::after {
+        background-color: #e5e5e5;
+      }
+    }
+  }
+}
